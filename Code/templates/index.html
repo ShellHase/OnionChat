@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
 </head>
 <body>
+<div id="left">
+  <img id="profile" src="{{ pro_pic }}"/>
+</div>
+<div id="center">
+  <h2>Titel der Diskussion</h2>
+  <h4>Kurzbeschreibung</h4>
+  <!--<details id="tool">
+      <summary>Moin</summary>
+  </details>-->
+  <div id="discuss">
+    <svg>
 
+    </svg>
+  </div>
+</div>
+<div id="bottom">
+  <form action="/" method="post">
+    <input type="text" name="msg">
+  </form>
+</div>
+<div id="right">
+
+</div>
 </body>
 </html>

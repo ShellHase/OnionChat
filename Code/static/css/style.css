@@ -1,0 +1,39 @@
+body {
+    background: #0d1117;
+    display: flex;
+}
+
+
+#center {
+    margin-left: 80px;
+    color: #8b949e;
+}
+
+#tool {
+     display: inline;
+     background: #253041;
+     border: 1px solid grey;
+     border-radius: 8px;
+     padding: 3px 3px 3px 3px;
+}
+
+
+#left {
+    margin: 15px 0px 0px 20px;
+}
+
+#profile {
+    width: 80px;
+    height: 80px;
+    border: 5px outset black;
+}
+
+
+#bottom {
+    align-self: flex-end;
+}
+
+
+#right {
+
+}

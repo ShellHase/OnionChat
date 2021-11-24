@@ -1,0 +1,3 @@
+Wie kann man Nachrichten von Usern auf der Webseite anzeigen/auslesen ohne sie neu laden zu lassen?
+Wie kann man ein Menu verschwinden lassen wenn der user irgendwo anders hinklickt?
+Wie kann man ein Menu mit css bearbeiten dass es aussieht wie ein neues fenster ohne Rand?

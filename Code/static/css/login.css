@@ -1,0 +1,13 @@
+body {
+    background: #0d1117;
+    color: #8b949e;
+}
+
+form, img {
+    line-height: 1.5;
+    margin-left: 550px;
+}
+
+label {
+    display: block;
+}
