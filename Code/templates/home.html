@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{{ url_for('static', filename='css/home.css') }}", rel="stylesheet">
+  </head>
+  <body>
+    <br/>
+    <a id="login" href="/login">login</a>
+    <h1>Onion Chat</h1><br/><br/><br/>
+    <a id="discussion" href="/discussion">Discussions</a>
+
+    {% if log_in %}
+      <p>State:&nbsp;<span style="color: #009b77;">Logged in</span></p>
+    {% else %}
+      <p>State:&nbsp;<span style="color: #ff6f61;">Not logged in</span></p>
+    {% endif %}
+  </body>
+</html>

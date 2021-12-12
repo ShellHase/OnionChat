@@ -1,0 +1,50 @@
+body{
+    background: #15191e;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 35px 0px 35px 80px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    background: #29353d;
+    border: 5px solid #15191e;
+    border-radius: 18px;
+    padding: 8px 20px;
+    font-size: 18px;
+    color: #e68a00;
+}
+a:hover{
+    text-decoration: none;
+    background: #29353d;
+    border: 5px dashed #15191e;
+    border-radius: 18px;
+    padding: 8px 20px;
+    font-size: 18px;
+    color: #e68a00;
+}
+
+.sub {
+    width: 20px;
+    height: 20px;
+    background: #15191e;
+    border: none;
+    font-size: 20px;
+    color: #ff6f61;
+}
+
+
+#add {
+    width: 25px;
+    height: 25px;
+    background: #15191e;
+    border: none;
+    font-size: 20px;
+    color: #c4c4c4;
+}

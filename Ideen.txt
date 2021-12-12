@@ -1,2 +1,6 @@
 - Game Musik im Hintergrund
 - Mittelfinger (Dislike) Button (vielleicht auch extra button und nich dislike ersatz)
+
+Colors:
+Infos für anderes (wie label) --> #c4c4c4 (hellgrau)
+Reiner Text --> #8b949e (blaugrau)

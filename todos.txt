@@ -1,0 +1,5 @@
+- Extra Information via form (mybe with Flask.request) for deleting and renaming discussions    #
+- Writing Message                                                                               # ShellHase
+- Managing permission if you' re not logged in                                                  #
+- login and home link on every page                                                             #
+- User settings                                                                                 #

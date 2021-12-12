@@ -1,0 +1,47 @@
+body {
+    background: #15191e;
+    border: 5px solid #003c66;
+}
+
+
+h1 {
+    display: inline;
+    margin-left: 42%;
+    color: #c4c4c4;
+}
+
+
+a {
+    text-decoration: none;
+    color: #c4c4c4;
+}
+
+#login {
+    display: block;
+    margin-left: 96%;
+    font-size: 17px;
+}
+
+#discussion:link, #discussion:visited {
+    display: inline;
+    background: #2a323c;
+    border: 5px outset #2a323c;
+    margin-left: 44%;
+    padding: 2px 5px;
+    font-size: 18px;
+}
+#discussion:hover {
+    background: #3f4b5a;
+    border: 5px outset #3f4b5a;
+}
+#discussion:active {
+    background: #3f4b5a;
+    border: 5px inset #3f4b5a;
+}
+
+
+p {
+    margin-left: 44%;
+    margin-top: 20%;
+    color: #c4c4c4;
+}

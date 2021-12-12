@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discussions</title>
+  <link href="{{ url_for('static', filename='css/discussList.css') }}" rel="stylesheet">
+</head>
+<body>
+  <form action="/discussion" method="post">
+    <ul>
+      <li>
+        <a href="/discussion/defaultDiscussion">Default Discussion</a>
+      </li>
+      {% for i in discussions %}
+        <li>
+          <a href="/discussion/{{ i[0] }}">{{ i[0].replace('_', ' #') }}</a>
+          <input class="sub" type="submit" name="cmd" value="-    {{ i[0] }}">
+        </li>
+      {% endfor %}
+    </ul>
+    <input id="add" type="submit" name="cmd" value="+">
+  </form>
+</body>
+</html>

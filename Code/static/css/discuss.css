@@ -1,12 +1,20 @@
 body {
-    background: #0d1117;
-    display: flex;
+    background: #15191e;
 }
 
 
 #center {
-    margin-left: 80px;
+    text-align: center;
     color: #8b949e;
+}
+
+#name {
+    margin-left: 6px;
+
+}
+
+#content {
+    margin-left: 52px;
 }
 
 #tool {
@@ -29,8 +37,9 @@ body {
 }
 
 
-#bottom {
+#form {
     align-self: flex-end;
+    text-align: center;
 }
 
 

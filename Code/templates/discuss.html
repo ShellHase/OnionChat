@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hilfe ich bin kein Titel!</title>
+  <link href="{{ url_for('static', filename='css/discuss.css') }}" rel="stylesheet"/>
+</head>
+<body>
+{% if log_in %}
+  <div id="left">
+    <img id="profile" src="{{ pro_pic }}"/>
+  </div>
+{% endif %}
+  <div id="center">
+  <h2>Titel der Diskussion</h2>
+  <h4>Kurzbeschreibung</h4>
+  <!--<details id="tool">
+      <summary>Moin</summary>
+  </details>-->
+  <div id="discuss">
+    {% for i in history %}
+      <img src={{ i[1] }} width="40" height="40">
+      <span id="name">{{ i[0] }}</span>
+      <p id="content">{{ i[2] }}</p><br/>
+    {% endfor %}
+  </div>
+</div>
+{% if log_in %}
+  <div id="form">
+    <form action="" method="post">
+      <input type="text" name="msg">
+    </form>
+  </div>
+{% endif %}
+<div id="right">
+</div>
+</body>
+</html>
