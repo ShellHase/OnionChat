@@ -44,7 +44,6 @@ def home():
                 "badBoy.jpg"))
             I.logged_in = True
 
-
         # setting up user
         I.name = request.form.get("name")
         I.password = sha512(request.form.get("password").encode()).hexdigest()
