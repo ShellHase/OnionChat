@@ -1,6 +1,7 @@
 body {
     background: #15191e;
     border: 5px solid #003c66;
+    display: flex;
 }
 
 
@@ -23,7 +24,9 @@ a {
 }
 
 #discussion:link, #discussion:visited {
-    display: inline;
+    display: block;
+    width: 85px;
+    height: 22px;
     background: #2a323c;
     border: 5px outset #2a323c;
     margin-left: 44%;
@@ -35,6 +38,24 @@ a {
     border: 5px outset #3f4b5a;
 }
 #discussion:active {
+    background: #3f4b5a;
+    border: 5px inset #3f4b5a;
+}
+#user:link, #user:visited {
+    display: block;
+    width: 85px;
+    height: 22px;
+    background: #2a323c;
+    border: 5px outset #2a323c;
+    margin-left: 44%;
+    padding: 2px 5px;
+    font-size: 18px;
+}
+#user:hover {
+    background: #3f4b5a;
+    border: 5px outset #3f4b5a;
+}
+#user:active {
     background: #3f4b5a;
     border: 5px inset #3f4b5a;
 }

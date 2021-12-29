@@ -8,12 +8,12 @@ body {
     color: #8b949e;
 }
 
-#name {
+.name {
     margin-left: 6px;
 
 }
 
-#content {
+.content {
     margin-left: 52px;
 }
 

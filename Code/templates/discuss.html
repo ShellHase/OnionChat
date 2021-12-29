@@ -8,7 +8,7 @@
 <body>
 {% if log_in %}
   <div id="left">
-    <img id="profile" src="{{ pro_pic }}"/>
+    <a href="{{ url_for('profile', user=name) }}"><img id="profile" src="{{ pro_pic }}"/></a>
   </div>
 {% endif %}
   <div id="center">
@@ -20,8 +20,8 @@
   <div id="discuss">
     {% for i in history %}
       <img src={{ i[1] }} width="40" height="40">
-      <span id="name">{{ i[0] }}</span>
-      <p id="content">{{ i[2] }}</p><br/>
+      <span class="name">{{ i[0] }}</span>
+      <p class="content">{{ i[2] }}</p><br/>
     {% endfor %}
   </div>
 </div>

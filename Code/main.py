@@ -67,37 +67,56 @@ def login():
     return render_template("login.html", log_in=I.logged_in, pwd_state=pwd_state)
 
 
+# --------------------------------------------/user--------------------------------------------
+@app.route("/user", methods=["GET"])
+def userList():
+    admin_db = sqlite3.connect("static/db/admin.db")
+    user = admin_db.execute("SELECT name, img FROM user").fetchall()
+    print(user)
+
+    return render_template("userList.html", user=user)
+
+
+# --------------------------------------------/user/<user>--------------------------------------------
+@app.route("/user/<user>")
+def profile(user):
+    admin_db = sqlite3.connect("static/db/admin.db")
+    img = admin_db.execute(f"SELECT img FROM user WHERE name = '{user}'").fetchall()[0][0]
+
+    return render_template("profile.html", name=user, img=img)
+
+
 # --------------------------------------------/discussion--------------------------------------------
 @app.route("/discussion", methods=["GET", "POST"])
 def discuss():
     # connecting for managing discussions
-    db = sqlite3.connect("static/db/admin.db")
+    admin_db = sqlite3.connect("static/db/admin.db")
     # if method = post
     if request.method == "POST":
         cmd = request.form.get("cmd")
         # if command is + adding new discussion
         if cmd[0] == "+":
             count = 0
-            for i in db.execute("SELECT name FROM discussions").fetchall():
+            for i in admin_db.execute("SELECT name FROM discussions").fetchall():
                 if i[0] == "newDiscussion" or re.search("newDiscussion_[0-9]", i[0]) is not None:
                     count += 1
-            db.execute(f'INSERT INTO discussions VALUES '
+            admin_db.execute(f'INSERT INTO discussions VALUES '
                        f"(\"newDiscussion{'_' + str(count) if count != 0 else ''}\")")
 
         # removing discussion entry and .db file if exists
         if cmd[0] == "-":
-            db.execute(f"DELETE FROM discussions WHERE name='{cmd[5:]}'")
+            admin_db.execute(f"DELETE FROM discussions WHERE name='{cmd[5:]}'")
             if os.path.exists(f"static/db/{cmd[5:]}.db"):
                 os.remove(f"static/db/{cmd[5:]}.db")
 
         # renaming discussion
         if cmd == ".":
-            db.execute(f"UPDATE discussions SET name='{''}'")
+            admin_db.execute(f"UPDATE discussions SET name='{''}'")
 
 
-    discussions = db.execute("SELECT name FROM discussions").fetchall()
-    db.commit()
-    db.close()
+    discussions = admin_db.execute("SELECT name FROM discussions").fetchall()
+    admin_db.commit()
+    admin_db.close()
     return render_template("discussList.html", discussions=discussions)
 
 
@@ -136,7 +155,7 @@ def defaultDiscuss(name):
     discuss_conn.close()
 
     # rendering template with params pro_pic for profile picture, history for chat history and log_ in for login state
-    return render_template("discuss.html", pro_pic=pic, history=history, log_in=I.logged_in)
+    return render_template("discuss.html", pro_pic=pic, history=history, log_in=I.logged_in, name=I.name)
 
 
 if __name__ == "__main__":

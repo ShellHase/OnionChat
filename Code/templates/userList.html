@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+  <link href="{{ url_for('static', filename='css/userList.css') }}" rel="stylesheet"/>
+</head>
+<body>
+  <ul>
+    {% for name, img in user %}
+      <li>
+        <a href="{{ url_for('profile', user=name[0]) }}">
+          <img src="{{ url_for('static', filename='images/' + img) }}" width="50" height="50">
+          <span class="name">{{ name }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

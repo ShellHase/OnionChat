@@ -1,0 +1,22 @@
+body {
+    background: #15191e;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    align-text: center;
+}
+
+.name {
+    font-size: 18px;
+    color: #e68a00;
+}
