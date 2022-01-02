@@ -72,7 +72,7 @@ def login():
 def userList():
     admin_db = sqlite3.connect("static/db/admin.db")
     user = admin_db.execute("SELECT name, img FROM user").fetchall()
-    print(user)
+    print("user: " + str(user))
 
     return render_template("userList.html", user=user)
 
@@ -81,7 +81,8 @@ def userList():
 @app.route("/user/<user>")
 def profile(user):
     admin_db = sqlite3.connect("static/db/admin.db")
-    img = admin_db.execute(f"SELECT img FROM user WHERE name = '{user}'").fetchall()[0][0]
+    img = admin_db.execute(f"SELECT img FROM user WHERE name = '{user}'").fetchall()
+    print("img: " + str(img))
 
     return render_template("profile.html", name=user, img=img)
 

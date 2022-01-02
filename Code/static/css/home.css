@@ -1,13 +1,12 @@
 body {
     background: #15191e;
     border: 5px solid #003c66;
-    display: flex;
+    text-align: center;
 }
 
 
 h1 {
-    display: inline;
-    margin-left: 42%;
+    text-align: center;
     color: #c4c4c4;
 }
 
@@ -20,16 +19,18 @@ a {
 #login {
     display: block;
     margin-left: 96%;
+    margin-top: 1%;
     font-size: 17px;
 }
 
 #discussion:link, #discussion:visited {
     display: block;
-    width: 85px;
+    width: 100px;
     height: 22px;
     background: #2a323c;
     border: 5px outset #2a323c;
-    margin-left: 44%;
+    margin: 0 auto;
+    text-align: center;
     padding: 2px 5px;
     font-size: 18px;
 }
@@ -43,11 +44,12 @@ a {
 }
 #user:link, #user:visited {
     display: block;
-    width: 85px;
+    width: 60px;
     height: 22px;
     background: #2a323c;
     border: 5px outset #2a323c;
-    margin-left: 44%;
+    margin: 0 auto;
+    text-align: center;
     padding: 2px 5px;
     font-size: 18px;
 }
@@ -62,7 +64,5 @@ a {
 
 
 p {
-    margin-left: 44%;
-    margin-top: 20%;
     color: #c4c4c4;
 }

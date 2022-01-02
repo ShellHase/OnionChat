@@ -6,15 +6,21 @@
   <link href="{{ url_for('static', filename='css/userList.css') }}" rel="stylesheet"/>
 </head>
 <body>
-  <ul>
+  <table>
     {% for name, img in user %}
-      <li>
-        <a href="{{ url_for('profile', user=name[0]) }}">
-          <img src="{{ url_for('static', filename='images/' + img) }}" width="50" height="50">
-          <span class="name">{{ name }}</span>
-        </a>
-      </li>
+      <tr>
+        <th>
+          <a href="{{ url_for('profile', user=name) }}">
+            <img class="img" src="{{ url_for('static', filename='images/' + img) }}" width="50" height="50">
+          </a>
+        </th>
+        <th>
+          <a href="{{ url_for('profile', user=name) }}">
+            <span class="name">{{ name }}</span>
+          </a>
+        </th>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 </body>
 </html>
