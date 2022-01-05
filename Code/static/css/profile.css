@@ -1,0 +1,11 @@
+body {
+    background: #15191e;
+    font-family: "bahnschrift";
+}
+
+
+#profile {
+    width: 80px;
+    height: 80px;
+    border: 5px outset black;
+}

@@ -72,7 +72,6 @@ def login():
 def userList():
     admin_db = sqlite3.connect("static/db/admin.db")
     user = admin_db.execute("SELECT name, img FROM user").fetchall()
-    print("user: " + str(user))
 
     return render_template("userList.html", user=user)
 
@@ -82,7 +81,6 @@ def userList():
 def profile(user):
     admin_db = sqlite3.connect("static/db/admin.db")
     img = admin_db.execute(f"SELECT img FROM user WHERE name = '{user}'").fetchall()
-    print("img: " + str(img))
 
     return render_template("profile.html", name=user, img=img)
 
@@ -95,6 +93,7 @@ def discuss():
     # if method = post
     if request.method == "POST":
         cmd = request.form.get("cmd")
+        print(cmd)
         # if command is + adding new discussion
         if cmd[0] == "+":
             count = 0
@@ -105,10 +104,10 @@ def discuss():
                        f"(\"newDiscussion{'_' + str(count) if count != 0 else ''}\")")
 
         # removing discussion entry and .db file if exists
-        if cmd[0] == "-":
-            admin_db.execute(f"DELETE FROM discussions WHERE name='{cmd[5:]}'")
-            if os.path.exists(f"static/db/{cmd[5:]}.db"):
-                os.remove(f"static/db/{cmd[5:]}.db")
+        if cmd[0] == "—":
+            admin_db.execute(f"DELETE FROM discussions WHERE name='{cmd[1:]}'")
+            if os.path.exists(f"static/db/{cmd[1:]}.db"):
+                os.remove(f"static/db/{cmd[1:]}.db")
 
         # renaming discussion
         if cmd == ".":
